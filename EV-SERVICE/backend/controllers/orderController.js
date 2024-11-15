@@ -3,6 +3,38 @@
 // Backend - orderController.js
 const Payment = require("../models/Payment");
 
+// exports.getShopOwnerOrders = async (req, res) => {
+//   try {
+//     if (req.userType !== "shopOwner") {
+//       return res.status(403).json({
+//         success: false,
+//         message: "Access denied. Only shop owners can view orders.",
+//       });
+//     }
+
+//     const shopOwnerId = req.user._id;
+//     console.log("Shop Owner ID:", shopOwnerId);
+
+//     const orders = await Payment.find({
+//       "cartItems.shopOwner.id": shopOwnerId,
+//     })
+//       .populate("user", "username email")
+//       .sort({ createdAt: -1 });
+
+//     console.log("Found Orders:", orders);
+
+//     res.json(orders);
+//   } catch (error) {
+//     console.error("Error in getShopOwnerOrders:", error);
+//     res.status(500).json({
+//       success: false,
+//       message: "Error fetching orders",
+//       error: error.message,
+//     });
+//   }
+// };
+////////////////////
+// Add this to orderController.js
 exports.getShopOwnerOrders = async (req, res) => {
   try {
     if (req.userType !== "shopOwner") {
@@ -21,7 +53,13 @@ exports.getShopOwnerOrders = async (req, res) => {
       .populate("user", "username email")
       .sort({ createdAt: -1 });
 
-    console.log("Found Orders:", orders);
+    // Log the image data for debugging
+    orders.forEach((order) => {
+      console.log("Order ID:", order._id);
+      order.cartItems.forEach((item) => {
+        console.log("Item images:", item.images);
+      });
+    });
 
     res.json(orders);
   } catch (error) {
@@ -33,6 +71,8 @@ exports.getShopOwnerOrders = async (req, res) => {
     });
   }
 };
+
+//////
 exports.updateOrderStatus = async (req, res) => {
   try {
     if (req.userType !== "shopOwner") {
