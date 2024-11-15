@@ -6,6 +6,7 @@ import Reviews from "./component/Reviews/Reviews";
 import Info from "./component/Info/Info";
 import StepGuide from "./component/StepGuide/StepGuide";
 import Footer from "./component/Footer/Footer";
+import OurServices from "./component/ourservices/ourservices";
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
   const handleDarkMode = () => {
@@ -17,9 +18,12 @@ const Home = () => {
       <main className="min-h-screen bg-white dark:bg-slate-800 dark:text-slate-200">
         <Hero darkMode={darkMode} />
         <Services />
-        <Reviews />
         <Info />
+
+        <Reviews />
         <StepGuide />
+        <OurServices />
+        <our />
       </main>
 
       <Footer />

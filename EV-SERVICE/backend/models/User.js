@@ -93,7 +93,7 @@ const userSchema = new mongoose.Schema(
     isApproved: { type: Boolean, default: true },
     googleId: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }

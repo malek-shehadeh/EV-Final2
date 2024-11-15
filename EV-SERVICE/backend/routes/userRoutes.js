@@ -82,6 +82,10 @@ router.get("/me", protect, async (req, res) => {
       .json({ error: "An error occurred while fetching user data" });
   }
 });
+///////
 
+router.get("/orders", protect, userController.getUserOrders);
+
+////
 module.exports = router;
 //////////////////////
