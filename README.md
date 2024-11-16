@@ -39,6 +39,6 @@
 ---
 
 
-[FigmaLink](https://www.figma.com/design/6YuFnFn5iG9qnYMHIvFsro/Ev-Service?node-id=1-8&node-type=canvas&t=a22Y00nanJVzTOaD-0)
+[FigmaLink]
 [EV-SERVICE.docx](https://github.com/user-attachments/files/17784286/EV-SERVICE.docx)
 [Brief.docx](https://github.com/user-attachments/files/17784287/Brief.docx)
